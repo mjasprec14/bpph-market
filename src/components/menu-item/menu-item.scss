@@ -5,8 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border-radius: 5px;
   margin: 0 0.75rem 1.5rem;
+  box-shadow: 0 0.2rem 0.5rem #000;
   overflow: hidden;
 
   &:first-child {
@@ -19,6 +20,8 @@
 
   &:hover {
     cursor: pointer;
+    box-shadow: 0 0.2rem 2rem #000;
+    transition: box-shadow 0.3s ease-in;
 
     .directory-menu__item--background-image {
       transform: scale(1.1);
@@ -45,21 +48,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
     background-color: #ffffff;
     opacity: 0.7;
     position: absolute;
+    line-height: 0;
 
     &-title {
       font-weight: bold;
-      margin-bottom: 6px;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: #4a4a4a;
     }
 
     &-subtitle {
       font-weight: lighter;
-      font-size: 1.6rem;
+      font-size: 2.4rem;
+      letter-spacing: 0.2rem;
     }
   }
 }

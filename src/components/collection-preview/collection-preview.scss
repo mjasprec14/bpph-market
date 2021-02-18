@@ -1,0 +1,16 @@
+.collection-preview {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rem;
+  padding: 4rem 6rem;
+
+  &--title {
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &--body {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,36 @@
+.header {
+  height: 15rem;
+  width: 100%;
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+
+  &__logo-container {
+    height: 100%;
+  }
+
+  &__logo {
+    height: 100%;
+
+    &--text {
+      font-size: 3.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25rem;
+    }
+  }
+
+  &__nav {
+    font-size: 2.7rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &--link {
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+    }
+  }
+}
