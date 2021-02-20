@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FormInput from "../form-input/form-input";
 import CustomButton from "../custom-button/custom-button";
-import { signInWithGoogle } from "../../firebase/firebase";
+import { auth, signInWithGoogle } from "../../firebase/firebase";
 import { FcGoogle } from "react-icons/fc";
 import "./sign-in.scss";
 
@@ -11,10 +11,19 @@ const SignIn = () => {
     password: "",
   });
 
-  const handleSubmit = e => {
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async e => {
     e.preventDefault();
 
-    setCredentials({ email: "", password: "" });
+    const { email, password } = credentials;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      setCredentials({ email: "", password: "" });
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   const handleChange = e => {
@@ -29,6 +38,8 @@ const SignIn = () => {
       <span className="sign-in--subtitle">
         Sign in with your email and password
       </span>
+
+      {error && <p className="invalid-password">{error}</p>}
 
       <form onSubmit={handleSubmit}>
         <FormInput

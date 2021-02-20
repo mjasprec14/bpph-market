@@ -37,7 +37,7 @@ const App = () => {
     return unsubscribe;
   }, []);
 
-  console.log(currentUser);
+  // console.log(currentUser);
   return (
     <Router>
       <Header currentUser={currentUser} />
