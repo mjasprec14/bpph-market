@@ -7,8 +7,7 @@ import Header from "./components/header/header";
 import HomePage from "./pages/homepage/homepage";
 import MarketPage from "./pages/market/market";
 import SignInSignUp from "./pages/sign-in-sign-up/sign-in-sign-up";
-import { auth } from "./firebase/firebase";
-
+import { auth, createUserProfileDocument } from "./firebase/firebase";
 const RacksPage = () => (
   <section>
     <h1>Racks Page</h1>
@@ -19,8 +18,20 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState([]);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(user => {
-      setCurrentUser(user);
+    const unsubscribe = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+        userRef.onSnapshot(snapShot => {
+          // console.log(snapShot);
+          // console.log(snapShot.data());
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data(),
+          });
+        });
+      } else {
+        setCurrentUser(userAuth);
+      }
     });
 
     return unsubscribe;

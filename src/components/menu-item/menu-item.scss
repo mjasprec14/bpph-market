@@ -1,13 +1,13 @@
 .directory-menu__item {
   min-width: 30%;
-  height: 24rem;
+  height: 28rem;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   margin: 0 0.75rem 1.5rem;
-  box-shadow: 0 0.2rem 0.5rem #000;
+  box-shadow: 0 0.2rem 0.5rem rgba(#000, 0.5);
   overflow: hidden;
 
   &:first-child {
@@ -20,7 +20,7 @@
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0.2rem 2rem #000;
+    box-shadow: 0 0.2rem 2rem rgba(#000, 0.5);
     transition: box-shadow 0.3s ease-in;
 
     .directory-menu__item--background-image {
