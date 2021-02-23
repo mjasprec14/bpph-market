@@ -31,14 +31,14 @@
     &--link {
       padding: 1rem 3.5rem;
       cursor: pointer;
-      animation: fadeIn 1s ease-in 1s;
-      animation-fill-mode: backwards;
-      transition: all 2.5s ease-in;
-      text-shadow: 0 1.5rem 2rem rgba(#000, 0.5);
+      // animation: fadeIn 1s ease-in 1s;
+      // animation-fill-mode: backwards;
+      transition: all 0.2s ease-in;
+      text-shadow: 0 1rem 1.5rem rgba(#000, 0.5);
 
       &:hover {
-        text-shadow: 0 2.5rem 4rem rgba(#000, 0.8);
-        transform: scaleY(-1rem);
+        text-shadow: 0 1.5rem 2rem rgba(#000, 0.9);
+        transform: translateY(-0.5rem) scale(1.025);
       }
     }
   }

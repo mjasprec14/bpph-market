@@ -1,7 +1,9 @@
 import FavoritesActionTypes from "./favoritesActionTypes";
+import { addItemToFavorite } from "./favoritesUtils";
 
 const INITIAL_STATE = {
   hidden: true,
+  favoritesItem: [],
 };
 
 const favoritesReducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +12,11 @@ const favoritesReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         hidden: !state.hidden,
+      };
+    case FavoritesActionTypes.ADD_TO_FAVORITES:
+      return {
+        ...state,
+        favoritesItem: addItemToFavorite(state.favoritesItem, action.payload),
       };
 
     default:
