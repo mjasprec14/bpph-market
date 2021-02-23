@@ -3,9 +3,11 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import BPPHLogo from "../../assets/bpph-logo-b.png";
 import { auth } from "../../firebase/firebase";
+import Favorites from "../favorites/favorites";
+import FavoritesDropDown from "../favorites-dropdown/favorites-dropdown";
 import "./header.scss";
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
   <header className="header">
     <Link to="/" className="header__logo-container">
       <img src={BPPHLogo} className="header__logo" alt="BPPH Logo" />
@@ -29,12 +31,16 @@ const Header = ({ currentUser }) => (
           SIGN IN
         </Link>
       )}
+
+      <Favorites />
     </nav>
+    {hidden ? null : <FavoritesDropDown className="favorites-dropdown" />}
   </header>
 );
 
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, favorites: { hidden } }) => ({
+  currentUser,
+  hidden,
 });
 
 export default connect(mapStateToProps)(Header);

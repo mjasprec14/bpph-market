@@ -1,0 +1,23 @@
+.favorites-dropdown {
+  position: absolute;
+  width: 32rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border: 1px solid #000;
+  background-color: #fff;
+  top: 8.2rem;
+  right: 6rem;
+  z-index: 5;
+
+  &__items {
+    height: 34rem;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+  button {
+    margin-top: 1rem;
+  }
+}

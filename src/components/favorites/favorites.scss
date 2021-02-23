@@ -1,0 +1,38 @@
+.favorites {
+  width: 4.2rem;
+  height: 4.2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: moveInLeft 1s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__icon {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  &__item-count {
+    position: absolute;
+    font-size: 1.7rem;
+    font-weight: bold;
+    bottom: 0.7rem;
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
