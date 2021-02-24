@@ -1,28 +1,29 @@
-.favorites {
-  width: 4rem;
-  height: 4rem;
+.cart {
+  width: 3.7rem;
+  height: 3.7rem;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  animation: fadeIn 1.5s ease-in-out;
+  transition: all 0.3s ease-in;
+  margin-left: 2rem;
+  margin-right: 4rem;
+  animation: fadeIn 1s ease-in-out;
 
   &:hover {
     transform: scale(1.2);
   }
 
   &__icon {
-    width: 4rem;
-    height: 4rem;
-    top: -1rem;
+    width: 3.7rem;
+    height: 3.7rem;
   }
 
   &__item-count {
     position: absolute;
-    font-size: 1.7rem;
-    font-weight: bold;
+    font-size: 1.6rem;
+    font-weight: bolder;
     top: 3rem;
     right: -1rem;
   }
@@ -30,10 +31,10 @@
 
 @keyframes fadeIn {
   0% {
-    opacity: 0;
+    opacity: 0.2;
   }
   0% {
-    opacity: 0.5;
+    opacity: 0.6;
   }
   0% {
     opacity: 1;

@@ -5,9 +5,11 @@ import BPPHLogo from "../../assets/bpph-logo-b.png";
 import { auth } from "../../firebase/firebase";
 import Favorites from "../favorites/favorites";
 import FavoritesDropDown from "../favorites-dropdown/favorites-dropdown";
+import Cart from "../cart-icon/cart-icon.js";
+import CartDropDown from "../cart-icon-dropdown/cart-icon-dropdown";
 import "./header.scss";
 
-const Header = ({ currentUser, hidden }) => (
+const Header = ({ currentUser, favoritesHidden, cartHidden }) => (
   <header className="header">
     <Link to="/" className="header__logo-container">
       <img src={BPPHLogo} className="header__logo" alt="BPPH Logo" />
@@ -32,15 +34,27 @@ const Header = ({ currentUser, hidden }) => (
         </Link>
       )}
 
+      <Cart />
+
       <Favorites />
     </nav>
-    {hidden ? null : <FavoritesDropDown className="favorites-dropdown" />}
+
+    {cartHidden ? null : <CartDropDown />}
+
+    {favoritesHidden ? null : (
+      <FavoritesDropDown className="favorites-dropdown" />
+    )}
   </header>
 );
 
-const mapStateToProps = ({ user: { currentUser }, favorites: { hidden } }) => ({
+const mapStateToProps = ({
+  user: { currentUser },
+  favorites: { favoritesHidden },
+  cart: { cartHidden },
+}) => ({
   currentUser,
-  hidden,
+  favoritesHidden,
+  cartHidden,
 });
 
 export default connect(mapStateToProps)(Header);
