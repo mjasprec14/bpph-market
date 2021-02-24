@@ -27,6 +27,32 @@
     margin-bottom: 1.5rem;
   }
 
+  &__favorite-icon {
+    height: 2rem;
+    width: 2rem;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+      animation: enlarge 0.5 ease-in-out;
+    }
+  }
+
+  &__favorite-icon-container {
+    display: flex;
+    opacity: 0;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .cart-icon__container {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+  }
+
   .custom-button {
     width: 80%;
     opacity: 0;
@@ -39,7 +65,7 @@
 
     .custom-button {
       width: 80%;
-      opacity: 0.7;
+      opacity: 1;
       position: absolute;
       top: 25.5rem;
     }
@@ -47,5 +73,26 @@
     .collection-item__image {
       opacity: 0.8;
     }
+
+    .collection-item__favorite-icon-container {
+      opacity: 1;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+  }
+}
+
+@keyframes enlarge {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
