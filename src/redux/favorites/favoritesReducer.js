@@ -3,7 +3,7 @@ import { addItemToFavorite } from "./favoritesUtils";
 
 const INITIAL_STATE = {
   favoritesHidden: true,
-  favoritesItem: [],
+  favoritesItems: [],
 };
 
 const favoritesReducer = (state = INITIAL_STATE, action) => {
@@ -16,7 +16,7 @@ const favoritesReducer = (state = INITIAL_STATE, action) => {
     case FavoritesActionTypes.ADD_TO_FAVORITES:
       return {
         ...state,
-        favoritesItem: addItemToFavorite(state.favoritesItem, action.payload),
+        favoritesItems: addItemToFavorite(state.favoritesItems, action.payload),
       };
 
     default:

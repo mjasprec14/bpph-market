@@ -37,16 +37,25 @@ const CollectionItem = ({ item, addFavorite, addItem }) => {
           <FiHeart className="collection-item__favorite-icon" />
         </span>
       </div>
+
       <div className="collection-item__footer">
-        <span className="collection-item__name">{_.capitalize(name)}</span>
-        <span className="collection-item__price">{`₱${numeral(price).format(
-          "0,0"
-        )}`}</span>
+        <h6 className="collection-item__name">{_.capitalize(name)}</h6>
+
+        <div className="collection-item__footer-content">
+          <span className="collection-item__item">{`Gender: ${gender}`}</span>
+          <span className="collection-item__item">{`DOH: ${birth}`}</span>
+        </div>
+
+        <div className="collection-item__footer-content">
+          <span className="collection-item__item">{`Diet: ${diet}`}</span>
+          <span className="collection-item__item">{`Weight: ${weight}g`}</span>
+        </div>
+
+        <div>Breeder: {sellerName}</div>
+        <div>Price: ₱{numeral(price).format("0,0.00")}</div>
+        <div>Location: {location}</div>
       </div>
 
-      {/* <CustomButton >
-        Add to favorites
-      </CustomButton> */}
       <CustomButton inverted onClick={() => addItem(item)}>
         Add to cart{" "}
         <span className="cart-icon__container">

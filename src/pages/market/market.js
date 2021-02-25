@@ -12,7 +12,6 @@ const MarketPage = () => {
 
   return (
     <section className="market-page">
-      <h6 className="market-page__header">Ball Python Market</h6>
       {collections.map(({ id, ...collectionProps }) => (
         <CollectionPreview key={id} {...collectionProps} />
       ))}

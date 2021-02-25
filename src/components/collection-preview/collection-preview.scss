@@ -1,8 +1,9 @@
 .collection-preview {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10rem;
-  padding: 4rem 6rem;
+  width: 100%;
+  margin-bottom: 15rem;
+  padding: 4rem 0;
 
   &--title {
     font-size: 2.8rem;

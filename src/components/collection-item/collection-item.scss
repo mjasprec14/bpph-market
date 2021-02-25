@@ -1,14 +1,15 @@
 .collection-item {
-  width: 22%;
+  width: 23%;
   display: flex;
   flex-direction: column;
-  height: 35rem;
+  height: 50rem;
   align-items: center;
   position: relative;
+  box-shadow: 0 1rem 2rem rgba(#000, 0.2);
 
   &__image {
     width: 100%;
-    height: 95%;
+    height: 46%;
     background-size: cover;
     background-position: center;
     margin-bottom: 0.5rem;
@@ -16,15 +17,31 @@
 
   &__footer {
     width: 100%;
-    height: 5%;
-    display: flex;
-    justify-content: space-between;
+    height: 30%;
     font-size: 1.8rem;
+    padding: 0 1rem;
+
+    &-content {
+      display: flex;
+
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
   }
 
   &__name {
-    width: 90%;
-    margin-bottom: 1.5rem;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 2.2rem;
+    width: 100%;
+    height: 8rem;
+    display: block;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    font-size: 2rem;
   }
 
   &__favorite-icon {
@@ -57,7 +74,7 @@
     width: 80%;
     opacity: 0;
     position: absolute;
-    top: 25.5rem;
+    top: 50rem;
   }
 
   &:hover {
@@ -67,7 +84,7 @@
       width: 80%;
       opacity: 1;
       position: absolute;
-      top: 25.5rem;
+      top: 52rem;
     }
 
     .collection-item__image {
